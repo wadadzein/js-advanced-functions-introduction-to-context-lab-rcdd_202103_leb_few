@@ -61,13 +61,19 @@ function allWagesFor(array){
 }
 
 
-function calculatePayroll(arr){
-    let sum = arr.map((array) => allWagesFor(array))
-     return sum.reduce((num, sum) => num + sum)
+// function calculatePayroll(arr){
+//     let sum = arr.map((array) => allWagesFor(array))
+//     return sum.reduce((num, sum) => num + sum)
 
   
-}
+// }
 
 function findEmployeebyFirstName(arr, firstName){
     return arr.find(x => {return x.firstName === firstName})
+}
+
+let calculatePayroll = function(arrayOfEmployeeRecords){
+    return arrayOfEmployeeRecords.reduce(function(memo, rec){
+        return memo + allWagesFor.call(rec)
+    }, 0)
 }
