@@ -92,20 +92,20 @@ function findEmployeeByFirstName(srcArray, string){
   })
 }
 
-function calculatePayroll(array){
-  let array1 = []
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// function calculatePayroll(array){
+//   let array1 = []
+//   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-  for (let i = 0; i < array.length; i++){
-    let wages = allWagesFor(array[i])
-    array1.push(wages)
-  }
-  return array1.reduce(reducer)
+//   for (let i = 0; i < array.length; i++){
+//     let wages = allWagesFor(array[i])
+//     array1.push(wages)
+//   }
+//   return array1.reduce(reducer)
 
-//   let calculatePayroll = function(arrayOfEmployeeRecords){
-//     return arrayOfEmployeeRecords.reduce(function(memo, rec){
-//         return memo + allWagesFor(rec)
-//     }, 0)
+// //   let calculatePayroll = function(arrayOfEmployeeRecords){
+// //     return arrayOfEmployeeRecords.reduce(function(memo, rec){
+// //         return memo + allWagesFor(rec)
+// //     }, 0)
+// // }
+
 // }
-
-}
