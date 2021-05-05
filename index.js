@@ -11,7 +11,7 @@ timeOutEvents:[]
 
 
 function createEmployeeRecords(arr) {
-  return arr.map(employee => createEmployeeRecord(employee));
+  return arr.map(array => createEmployeeRecord(array));
 }
 
  
