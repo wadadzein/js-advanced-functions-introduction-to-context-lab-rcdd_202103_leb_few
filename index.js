@@ -77,3 +77,14 @@ function findEmployeebyFirstName(arr, firstName){
 //         return memo + allWagesFor.call(rec)
 //     }, 0)
 // }
+
+function calculatePayroll(array){
+  let array1 = []
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  for (let i = 0; i < array.length; i++){
+    let wages = allWagesFor(array[i])
+    array1.push(wages)
+  }
+  return array1.reduce(reducer)
+}
