@@ -61,7 +61,7 @@ function wagesEarnedOnDate(obj, soughtDate){
 }
 
 function allWagesFor(obj){
-  //iterate over dates
+  
   let total = 0
   for (let i = 0; i < obj.timeInEvents.length; i++){
     total += wagesEarnedOnDate(obj, obj.timeInEvents[i].date)
