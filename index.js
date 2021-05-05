@@ -102,10 +102,10 @@ function findEmployeeByFirstName(srcArray, string){
 //   }
 //   return array1.reduce(reducer)
 
-// //   let calculatePayroll = function(arrayOfEmployeeRecords){
-// //     return arrayOfEmployeeRecords.reduce(function(memo, rec){
-// //         return memo + allWagesFor(rec)
-// //     }, 0)
-// // }
+  let calculatePayroll = function(arrayOfEmployeeRecords){
+    return arrayOfEmployeeRecords.reduce(function(memo, rec){
+        return memo + allWagesFor(rec)
+    }, 0)
+}
 
 // }
