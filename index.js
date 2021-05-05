@@ -62,8 +62,8 @@ function allWagesFor(array){
 
 
 function calculatePayroll(arr){
-//     let sum = arr.map((array) => allWagesFor(array))
-//     return array.reduce((num, sum) => num + sum)
+    let sum = arr.map((array) => allWagesFor(array))
+//     return sum.reduce((num, sum) => num + sum)
 
   
 }
