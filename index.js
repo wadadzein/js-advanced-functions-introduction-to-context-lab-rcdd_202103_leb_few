@@ -10,9 +10,7 @@ function createEmployeeRecord(array){
 }
 
 function createEmployeeRecords(aOfArray){
-  // map takes each element (an array) 
-  // this anonymous f sends that arg into createEmployeeRecord
-  // which turns it into an obj and sends it back
+
   return aOfArray.map(function(array){
     return createEmployeeRecord(array)
   })
@@ -20,10 +18,8 @@ function createEmployeeRecords(aOfArray){
 
 
 function createTimeInEvent(obj, dateStamp){
-    // destructuring
+   
     let [date, hour] = dateStamp.split(" ")
-  
-    // because this is an array...
     obj.timeInEvents.push({
       type: "TimeIn",
       hour: parseInt(hour),
@@ -34,10 +30,9 @@ function createTimeInEvent(obj, dateStamp){
 
 
 function createTimeOutEvent(obj, dateStamp){
-      // destructuring
+   
       let [date, hour] = dateStamp.split(" ")
   
-      // because this is an array...
       obj.timeOutEvents.push({
         type: "TimeOut",
         hour: parseInt(hour),
@@ -48,8 +43,7 @@ function createTimeOutEvent(obj, dateStamp){
 }
 
 function hoursWorkedOnDate(obj, soughtDate){
-  // find takes in a function and applies it to the array timeInEvents
-  //
+ 
   let inEvent = obj.timeInEvents.find(function(e){
     return e.date === soughtDate
   })
@@ -73,17 +67,6 @@ function allWagesFor(obj){
     total += wagesEarnedOnDate(obj, obj.timeInEvents[i].date)
   }
   return total
-
-  //use reduce & map
-    //   let eligibleDates = employee.timeInEvents.map(function(e){
-    //     return e.date
-    // })
-
-    // let payable = eligibleDates.reduce(function(memo, d){
-    //     return memo + wagesEarnedOnDate(employee, d)
-    // }, 0)
-
-    // return payable
 }
 
 function findEmployeeByFirstName(srcArray, string){
@@ -92,15 +75,7 @@ function findEmployeeByFirstName(srcArray, string){
   })
 }
 
-// function calculatePayroll(array){
-//   let array1 = []
-//   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-//   for (let i = 0; i < array.length; i++){
-//     let wages = allWagesFor(array[i])
-//     array1.push(wages)
-//   }
-//   return array1.reduce(reducer)
 
   let calculatePayroll = function(arrayOfEmployeeRecords){
     return arrayOfEmployeeRecords.reduce(function(memo, rec){
