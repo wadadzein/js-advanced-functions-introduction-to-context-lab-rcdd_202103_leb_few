@@ -41,3 +41,31 @@ function hoursWorkedOnDate(array,date)
 {
   
 }
+ function hoursWorkedOnDate(array, date){
+   let timeIn = array.timeInEvents.find(daywork => daywork.date === date);
+  let timeOut = array.timeOutEvents.find(daywork => daywork.date === date );
+  return parseInt((timeOut.hour - timeIn.hour) / 100);
+ }
+ 
+ 
+function wagesEarnedOnDate(array, date){
+  return (hoursWorkedOnDate(array, date)*array.payPerHour);
+}
+
+function allWagesFor(array){
+ let allDates= array.timeInEvents.map(time => time.date);
+ return alldates.reduce(function(result,date){
+   return result+ wagesEarnedOnDate(array, date);
+ },0);
+ 
+}
+
+
+function calculatePayroll(array){
+    let sum = array.map((e) => allWagesFor(e))
+    return sum.reduce((num, sum) => num + sum)
+}
+
+function findEmployeebyFirstName(arr, firstName){
+    return arr.find(x => {return x.firstName === firstName})
+}
